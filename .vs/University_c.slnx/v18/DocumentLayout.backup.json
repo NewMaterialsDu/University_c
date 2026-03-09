@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\University_code\\University_c\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\University_code\\University_c\\\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "num01.cpp",
+              "DocumentMoniker": "E:\\University_code\\University_c\\\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp",
+              "RelativeDocumentMoniker": "\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp",
+              "ToolTip": "E:\\University_code\\University_c\\\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp",
+              "RelativeToolTip": "\u901A\u8BAF\u5F55\u9879\u76EE\u6848\u4F8B\\num01.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-09T14:09:30.489Z",
+              "EditorCaption": ""
             }
           ]
         }
