@@ -116,8 +116,74 @@ void showPersonArray(AddressBooks * abs) {
 	
 };
 
-//
+//3、删除联系人
+//3、1.检测联系人是否存在
+int isExit(AddressBooks* abs, string name) {
+	for (int i = 0; i <= abs->m_Size; i++) {
+		if (abs->personArray[i].m_name == name) {
+			return i;
+		}
+		//找到返回位置
+	}
+	return -1;
+	//没找到返回-1
+}
 
+//3、.2删除联系人
+void deletePerson(AddressBooks * abs) {
+	cout << "请输入删除联系人的姓名：" << endl;;
+
+	while (true) {
+		string ming;
+		cin >> ming;
+		
+		if (isExit(abs, ming) == -1) {
+			cout << "没有该联系人！请重新输入：" << endl;
+
+		}
+		else {
+			for (int i = isExit(abs, ming); i < abs->m_Size; i++) {
+				//数据前移
+				abs->personArray[i].m_name = abs->personArray[i + 1].m_name;
+			}
+			abs->m_Size--;
+			cout << "已删除该联系人！" << endl;
+			break;
+		}
+	}
+}
+
+//4、查找联系人
+void findPerson(AddressBooks* abs) {
+	cout << "请输入要查找的联系人：" << endl;
+	string name;
+	cin >> name;
+	int ret =isExit(abs, name);
+	if (ret != -1) {
+		cout << "姓名：" << abs->personArray[ret].m_name << "\t";
+		cout << "年龄：" << abs->personArray[ret].m_age << "\t";
+		cout << "性别：" << (abs->personArray[ret].m_phone = 1 ? "男" : "女") << "\t";
+		cout << "电话号码：" << abs->personArray[ret].m_phone << "\t";
+		cout << "住址：" << abs->personArray[ret].m_addr << "\t";
+			
+
+	}
+	else {
+		cout << "查无此人!" << endl;
+	}
+	system("pause");
+	system("cls");
+}
+
+//5.修改联系人
+
+//6.清空联系人
+void cleanPerson(AddressBooks* abs) {
+	abs->m_Size = 0;
+	cout << "通讯录已清空！" << endl;
+	system("pause");
+	system("cls");
+}
 int main() {
 
 	//创建通讯录结构体变量
@@ -139,16 +205,17 @@ int main() {
 			showPersonArray(&abs);
 			break;
 		case 3:
-			cout << "删除联系人" << endl;
+			deletePerson(&abs);
 			break;
+		
 		case 4:
-			cout << "查找联系人" << endl;
+			findPerson(&abs);
 			break;
 		case 5:
 			cout << "修改联系人" << endl;
 			break;
 		case 6:
-			cout << "清空联系人" << endl;
+			cleanPerson(&abs);
 			break;
 		case 0:
 			cout << "欢迎下次使用！" << endl;
