@@ -151,6 +151,8 @@ void deletePerson(AddressBooks * abs) {
 			break;
 		}
 	}
+	system("pause");
+	system("cls");
 }
 
 //4、查找联系人
@@ -176,6 +178,42 @@ void findPerson(AddressBooks* abs) {
 }
 
 //5.修改联系人
+void modifyPerson(AddressBooks* abs) {
+	cout << "请输入要修改的联系人姓名：" << endl;
+	string name;
+	cin >> name;
+	int ret = isExit(abs, name);
+	if (ret != -1) {
+		string newName;
+		cout << "请输入新的姓名：";
+		cin >> newName;
+		abs->personArray[ret].m_name = newName;
+		int newAge;
+		cout << "请输入新的年龄：";
+		cin >> newAge;
+		abs->personArray[ret].m_age = newAge;
+		int newSex;
+		cout << "请输入新的性别：" << endl;
+		cout << "1-----男" << endl;
+		cout << "2-----女" << endl;
+		cin >> newSex;
+		abs->personArray[ret].m_sex = newSex;
+		string newPhone;
+		cout << "请输入新的电话号码：";
+		cin >> newPhone;
+		abs->personArray[ret].m_phone = newPhone;
+		string newAddr;
+		cout << "请输入新的家庭住址：";
+		cin >> newAddr;
+		abs->personArray[ret].m_addr = newAddr;
+		cout << "修改完成！" << endl;
+	}
+	else {
+		cout << "查无此人！" << endl;
+	}
+	system("pause");
+	system("cls");
+}
 
 //6.清空联系人
 void cleanPerson(AddressBooks* abs) {
@@ -212,7 +250,7 @@ int main() {
 			findPerson(&abs);
 			break;
 		case 5:
-			cout << "修改联系人" << endl;
+			modifyPerson(&abs);
 			break;
 		case 6:
 			cleanPerson(&abs);
