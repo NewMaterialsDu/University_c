@@ -1,0 +1,24 @@
+﻿  FileName.cpp
+E:\University_code\University_c\Project1\FileName.cpp(28,47): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(28,47): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(29,47): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(29,47): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(31,49): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(31,49): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(32,49): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(32,49): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(37,49): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(37,49): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(38,49): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(38,49): warning C4302: “类型强制转换”: 从“int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(42,49): warning C4311: “类型强制转换”: 从“const char (*)[12]”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(42,49): warning C4302: “类型强制转换”: 从“const char (*)[12]”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(46,51): warning C4311: “类型强制转换”: 从“const int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(46,51): warning C4302: “类型强制转换”: 从“const int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(47,51): warning C4311: “类型强制转换”: 从“const int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(47,51): warning C4302: “类型强制转换”: 从“const int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(53,51): warning C4311: “类型强制转换”: 从“const int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(53,51): warning C4302: “类型强制转换”: 从“const int *”到“int”截断
+E:\University_code\University_c\Project1\FileName.cpp(54,51): warning C4311: “类型强制转换”: 从“const int *”到“int”的指针截断
+E:\University_code\University_c\Project1\FileName.cpp(54,51): warning C4302: “类型强制转换”: 从“const int *”到“int”截断
+  Project1.vcxproj -> E:\University_code\University_c\Project1\x64\Debug\Project1.exe
