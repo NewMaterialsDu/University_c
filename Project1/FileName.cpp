@@ -5,58 +5,36 @@
 #include<iostream>
 using namespace std;
 
-//全局变量
-int g_a = 10;
-int g_b = 10;
-
-//const修饰全局变量、全局常量
-const int c_g_a = 10;
-const int c_g_b = 10;
-
-
 int main()
 {
-
-    //全局区
-
-    //全局变量、静态变量、常量
-
-    //创建普通局部变量
+    //2.1引用的基本使用
+    //作用：给变量起别名
+    //语法：数据类型 &别名 = 原名
     int a = 10;
-    int b = 10;
+    int& b = a;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
 
-    cout << "局部变量a的地址为：" << (int)&a << endl;
-    cout << "局部变量b的地址为：" << (int)&b << endl;
+    b = 100;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
 
-    cout << "全局变量g_a的地址为：" << (int)&g_a << endl;
-    cout << "全局变量g_b的地址为：" << (int)&g_b << endl;
+    //2.2引用的注意事项
+    //1.引用必须要初始化
+    //int& b; 错误的
 
-    //静态变量 普通变量前加static属于静态变量
-    static int s_a = 10;
-    static int s_b = 10;
-    cout << "静态变量s_a的地址为：" << (int)&s_a << endl;
-    cout << "静态变量s_b的地址为：" << (int)&s_b << endl;
+    //2.引用一但初始化后，就可以更改了
+    int c = 20;
 
-    //常量
-    //字符串常量
-    cout << "字符串常量的地址为：" << (int)&"Hello World" << endl;
+    b = c;//赋值操作，而不是更改引用
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
+    //int& b = c  会报错：重新定义，多次初始化
 
-    //const修饰变量
-    //const修饰全局变量、const修饰局部变量
-    cout << "全局常量c_g_a的地址为：" << (int)&c_g_a << endl;
-    cout << "全局常量c_g_b的地址为：" << (int)&c_g_b << endl;
-
-    const int c_l_a = 10;
-    const int c_l_b = 10;
-    //c-const g-global l-local
-
-    cout << "局部变量c_l_a的地址为：" << (int)&c_l_a << endl;
-    cout << "局部变量c_l_b的地址为：" << (int)&c_l_b << endl;
-
-
-
-
-
+    //2.3引用做函数的参数
+    //利用引用的技术让形参修饰实参
+    //可以简化指针修改实参
 
 
     return 0;
