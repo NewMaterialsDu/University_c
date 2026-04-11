@@ -6,12 +6,32 @@
 using namespace std;
 
 //2.3
+//交换函数
+//1.值传递
+void myswap01(int a,int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+
+    cout << "swap01 a = " << a << endl;
+    cout << "swap01 b = " << b << endl;
+
+}
+
+//2.地址传递
+void myswap02(int* a, int* b) {
+    int temp = *a;
+    * a = *b;
+    *b = temp;
 
 
-
-
-
-
+}
+//3.引用传递
+void myswap03(int &a,int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
 
 int main()
 {
@@ -43,6 +63,21 @@ int main()
     //2.3引用做函数的参数
     //利用引用的技术让形参修饰实参
     //可以简化指针修改实参
+    int a1 = 10;
+    int b1 = 20;
+
+    //myswap01(a, b);//值传递，形参不会改变实参
+
+    //myswap02(&a1, &b1); //地址传递，形参会修饰实参
+
+    //myswap03(a1,b1);//引用传递，实参会修饰实参
+
+
+
+    cout << "a1 = " << a1 << endl;
+    cout << "b1 = " << b1 << endl;
+
+
 
 
     return 0;
