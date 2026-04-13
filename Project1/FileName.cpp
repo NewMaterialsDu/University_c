@@ -33,6 +33,33 @@ void myswap03(int &a,int &b) {
     b = temp;
 }
 
+//2.4引用做函数的返回值
+//1.不要返回局部变量的引用
+int& test01() {
+    int a = 10;//局部变量存放在四区中的栈区
+    return a;
+}
+
+//2.函数的调用可以作为左值
+
+int& test02() {
+    static int a = 10;//静态变量，存放在全局区，在程序结束后系统释放
+    return a;
+}
+
+//2.5发现是引用，转换为int* const tef = &a;
+void func(int& tef) {
+    tef = 100;//tef是引用，转换为tef = 100
+}
+
+//2.6常量引用
+
+
+
+
+
+
+
 int main()
 {
     //2.1引用的基本使用
@@ -72,10 +99,46 @@ int main()
 
     //myswap03(a1,b1);//引用传递，实参会修饰实参
 
-
-
     cout << "a1 = " << a1 << endl;
     cout << "b1 = " << b1 << endl;
+
+
+
+    //2.4
+
+    //int& ref = test01();
+    //cout << ref << endl;//第一次是因为编译器做了保留
+    //cout << ref << endl;//第二次因为内存已经释放
+    //
+
+    int& ref2 = test02();
+    cout << ref2 << endl;
+    cout << ref2 << endl;
+
+    test02() = 1000;//如果函数的返回值是引用，这个函数的调用可以作为左值
+    //相当于对a的操作，ref2相当于a的别名
+    cout << ref2 << endl;
+    cout << ref2 << endl;
+
+    //2.5引用的本质
+    int c1 = 10;
+    //自动转换为 int* const tef = &c1;指针常量指向不可改，所以引用不可更改
+    int& tef = c1;
+    tef = 20;//内部发现tef是引用，自动转换为 tef = 20;
+
+    cout << "c1:" << c1 << endl;
+    cout << "tef2:" << tef << endl;
+
+    func(a);
+
+    //2.6常量引用
+
+
+
+
+
+
+
 
 
 
