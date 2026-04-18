@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Project1\\Debug\\point.h.obj",
+            "outputs": [
+                "E:\\University_code\\University_c\\Project1\\Project1\\Debug\\vc145.pdb",
+                "Project1\\Debug\\",
+                "E:\\University_code\\University_c\\Project1\\Project1\\Debug\\point.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "point.h",
+                    "source-path": "e:\\university_code\\university_c\\project1\\point.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

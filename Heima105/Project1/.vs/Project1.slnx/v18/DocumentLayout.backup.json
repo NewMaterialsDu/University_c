@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\University_code\\University_c\\Project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|E:\\University_code\\University_c\\Project1\\FileName.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|solutionrelative:FileName.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|E:\\University_code\\University_c\\Project1\\point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|solutionrelative:point.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|E:\\University_code\\University_c\\Project1\\cir.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|solutionrelative:cir.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|E:\\University_code\\University_c\\Project1\\cir.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|solutionrelative:cir.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|E:\\University_code\\University_c\\Project1\\point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F6B1EE2C-9C41-4B52-8352-D027608428DD}|Project1.vcxproj|solutionrelative:point.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "cir.cpp",
+              "DocumentMoniker": "E:\\University_code\\University_c\\Project1\\cir.cpp",
+              "RelativeDocumentMoniker": "cir.cpp",
+              "ToolTip": "E:\\University_code\\University_c\\Project1\\cir.cpp",
+              "RelativeToolTip": "cir.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-18T08:42:27.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cir.h",
+              "DocumentMoniker": "E:\\University_code\\University_c\\Project1\\cir.h",
+              "RelativeDocumentMoniker": "cir.h",
+              "ToolTip": "E:\\University_code\\University_c\\Project1\\cir.h",
+              "RelativeToolTip": "cir.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-18T08:41:58.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "point.cpp",
+              "DocumentMoniker": "E:\\University_code\\University_c\\Project1\\point.cpp",
+              "RelativeDocumentMoniker": "point.cpp",
+              "ToolTip": "E:\\University_code\\University_c\\Project1\\point.cpp",
+              "RelativeToolTip": "point.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-18T08:39:18.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "point.h",
+              "DocumentMoniker": "E:\\University_code\\University_c\\Project1\\point.h",
+              "RelativeDocumentMoniker": "point.h",
+              "ToolTip": "E:\\University_code\\University_c\\Project1\\point.h",
+              "RelativeToolTip": "point.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-18T08:35:47.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileName.cpp",
+              "DocumentMoniker": "E:\\University_code\\University_c\\Project1\\FileName.cpp",
+              "RelativeDocumentMoniker": "FileName.cpp",
+              "ToolTip": "E:\\University_code\\University_c\\Project1\\FileName.cpp",
+              "RelativeToolTip": "FileName.cpp",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-06T05:24:15.63Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
