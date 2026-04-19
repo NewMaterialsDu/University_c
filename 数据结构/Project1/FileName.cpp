@@ -14,6 +14,26 @@ typedef struct point {
 	int x;
 	int y;
 };
+//时间复杂度计算：
+//01.
+int fun01(int n) {
+	int i = 0, sum = 0;
+	//下面相当于sum = sum + （++i）
+	while (sum < n) sum += ++i;
+	return i;
+}
+//当sum = 1+2+3+...+n时，程序执行完毕，相当于等差数列求和, t*(t+1)/2 = n  所以t = n^1/2
+//所以时间复杂度为：O(n^1/2)
+
+//02.
+void fun02(int n) {
+	int x = 0;
+	while (n >= (x + 1) * (x + 1))
+		x = x + 1;
+}
+//当n < （x+1)^2,即：n^1/2 - 1 = x   所以时间复杂度为：O(n^1/2)
+
+//03.
 
 int main() {
 
