@@ -15,7 +15,9 @@ using namespace std;
 
 int main()
 {
- 
+//4.2
+//4.2.1
+
 
 
 
