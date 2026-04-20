@@ -47,6 +47,9 @@ void fun03(int n) {
 //内层执行次数：1 , 2 , 4 , 8 ,16 , .... ,2^n
 //即：i = 2^n ，化为：n = log2 i   所以时间复杂度为：O(log2 n)
 
+//空间复杂度
+//ADT
+
 int main() {
 
     char str1 [10];
