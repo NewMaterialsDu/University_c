@@ -141,7 +141,8 @@ int main() {
 	deleteNode(list, 3);
 	listNode(list);//±éÀú
 
-	int len = listLength(list);
+	int len;
+	len = listLength(list);
 	printf("%d\n",len);
 
 	listNode(list);//±éÀú
