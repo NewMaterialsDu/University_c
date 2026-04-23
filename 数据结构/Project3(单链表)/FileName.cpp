@@ -122,6 +122,22 @@ void freelist(Node* L) {
 	L->next = NULL;
 }
 
+//使用双指针找到倒数第K个节点:快指针先走k步，然后一起走，快指针为空时，慢指针到目标位置
+int findNodeFS(Node *L,int k) {
+	Node* fast = L->next;
+	Node* slow = L->next;
+	for (int i = 0; i < k; i++) {
+		fast = fast->next;
+
+	}
+	while (fast != NULL) {
+		fast = fast->next;
+		slow = slow->next;
+	}
+	printf("倒数第%d个节点的值为：%d\n", k, slow->data);
+	return 1;
+}
+
 int main() {
 
 	Node* list = initList();
@@ -147,10 +163,12 @@ int main() {
 
 	listNode(list);//遍历
 
-	freelist(list);
-	listNode(list);//遍历
-	len = listLength(list);
-	printf("%d\n", len);
+	//freelist(list);
+	//listNode(list);//遍历
+	//len = listLength(list);
+	//printf("%d\n", len);
+
+	findNodeFS(list, 3);
 
 	return 0;
 }
