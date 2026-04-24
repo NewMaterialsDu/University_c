@@ -241,17 +241,89 @@ Node* reverseList(Node* head) {
 	Node* third;
 	// 三个节点同时移动，反转链表节点指向
 	while (second != NULL) {
-		third = second->next;
-		second->next = first;
-		first = second;
-		second = third;
+		third = second->next;// 先保存 next 节点，避免丢失剩余链表
+		second->next = first;// 反转指针：让当前节点指向已反转链表的头
+		first = second;//相当于两个指针指向同一个节点
+		second = third;//同上
 	}
 	// 复用传入的原 head（哨兵），把它的 next 指向反转后的首节点并返回原 head
 	head->next = first;
 	return head;
 }
 
-//删除链表的中间节点
+//删除链表的中间节点,用快慢指针
+int delMiddleNode(Node* head) {
+	Node* fast = head->next;
+	Node* slow = head;
+	while(fast != NULL&&fast->next!=NULL){
+		fast = fast->next->next;
+		slow = slow->next;
+	}//fast为空或者fast下一个为空时，slow位于中间节点的前置节点
+	Node* q = slow->next;
+	slow->next = q->next;
+	free(q);
+	return 1;
+}
+
+//链表重新排序：a1,a2,....,an变成a1,an,a2,a(n-1),a3,a(n-2)
+void reorderList(Node* head) {
+	Node* fast = head->next;
+	Node* slow = head;
+	while (fast != NULL && fast->next != NULL) {
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+	Node* first = NULL;
+	Node* second = slow->next;
+	slow->next = NULL;//前置节点的下一个为空（中间节点），把它断开
+	Node* third = NULL;
+	//把第二段链表做一个反转
+	while (second != NULL) {
+		third = second->next;
+		second->next = first;
+		first = second;
+		second = third;
+	}
+	Node* p1 = head->next;//头没有变，还是指向第一段链表的第一个节点
+	Node* q1 = first;//反转之后，first指向第二段的第一个节点（因为是向头移动的）
+	Node* p2, * q2;
+    while (p1 != NULL && q1 != NULL) {
+		p2 = p1->next;
+		q2 = q1->next;
+		// 改变指向，将它们交叉相连
+		p1->next = q1;
+		// 如果第一段后面没有节点了（奇数长度时会出现），
+		// 应该把当前第二段的下一个节点接上，保留剩余部分，然后结束
+		if (p2 == NULL) {
+			//链表长度为奇数时，第二段会多出一个中间节点，把他接上
+			q1->next = q2;
+			break;
+		}
+		else {
+			//正常运行时：
+			q1->next = p2;
+		}
+
+		p1 = p2;
+		q1 = q2;
+	}
+
+}
+
+//判断链表是否有环
+int iscycle(Node* head) {
+	//快慢指针一起走，在环内总会相遇，相遇时则代表有环
+	Node* fast = head;
+	Node* slow = head;
+	while (fast != NULL && fast->next != NULL) {
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow) {
+			return 1;
+		}
+	}
+	return 0;
+}
 
 int main() {
 	
@@ -319,7 +391,6 @@ int main() {
 	//removeNode(list, 21);
 	//listNode(list);
 
-	////反转函数测试
 	//Node* list = initList();
 	//Node* tail = get_tail(list);
 	//tail = insertTail(tail, 1);
@@ -328,9 +399,43 @@ int main() {
 	//tail = insertTail(tail, 4);
 	//tail = insertTail(tail, 5);
 	//tail = insertTail(tail, 6);
+	//tail = insertTail(tail, 7);
+	//tail = insertTail(tail, 8);
+
+	////反转函数测试
 	//listNode(list);
 	//Node* reverse = reverseList(list);
 	//listNode(reverse);
+	
+	////删除中间节点
+	//listNode(list);
+	//delMiddleNode(list);
+	//listNode(list);
+
+	////链表重新排序
+	//listNode(list);
+	//reorderList(list);
+	//listNode(list);
+
+	////判断是否有环
+	//Node* list = initList();
+	//Node* tail = get_tail(list);
+	//tail = insertTail(tail, 1);
+	//tail = insertTail(tail, 2);
+	//tail = insertTail(tail, 3);
+	//Node* three = tail;
+	//tail = insertTail(tail, 4);
+	//tail = insertTail(tail, 5);
+	//tail = insertTail(tail, 6);
+	//tail = insertTail(tail, 7);
+	//tail = insertTail(tail, 8);
+	//tail->next = three;
+	//if (iscycle(list)) {
+	//	printf("有环\n");
+	//}
+	//else {
+	//	printf("无环\n");
+	//}
 
 	return 0;
 }
