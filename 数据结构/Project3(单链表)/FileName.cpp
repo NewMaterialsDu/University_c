@@ -325,6 +325,40 @@ int iscycle(Node* head) {
 	return 0;
 }
 
+//找到链表环的入口
+Node* findBegin(Node* head) {
+	//先判断是否有环
+	Node* fast = head;
+	Node* slow = head;
+	while (fast != NULL && fast->next != NULL) {
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow) {
+			//新建一个指针，三个指针指向同一个节点，新指针遍历一次，再次相遇时，得出环的节点数，并记录下来
+			Node* p = fast;
+			int cout = 1;
+			while (p->next != slow) {
+				cout++;
+				p = p->next;
+			}
+			//让他们回到头节点，fast先走一个环的节点数，此时他们相差刚好一个环数，然后一起走，再次相遇时就是在入口
+			fast = head;
+			slow = head;
+			for (int i = 0; i < cout; i++) {
+				fast = fast->next;
+			}
+			while (fast != slow) {
+				fast = fast->next;
+				slow = slow->next;
+			}
+			return slow;
+		}
+
+	}
+	return NULL;
+}
+
+
 int main() {
 	
 	////测试各个函数
@@ -436,6 +470,10 @@ int main() {
 	//else {
 	//	printf("无环\n");
 	//}
+
+	//找到环的入口
+	//Node* p = findBegin(list);
+	//printf("%d\n", p->data);
 
 	return 0;
 }

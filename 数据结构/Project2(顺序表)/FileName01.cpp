@@ -98,6 +98,7 @@ int findElem(seqlist* L, ElemType e) {
 
 	return 1;
 }
+
 int main() {
 
 
