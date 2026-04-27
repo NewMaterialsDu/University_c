@@ -69,56 +69,163 @@ using namespace std;
     //person p8 = p7;//拷贝构造
 //}
 
+//class person {
+//public:
+//    person() {
+//        cout << "无参构造函数！" << endl;
+//    }
+//    person(int age) {
+//        cout << "有参构造函数！" << endl;
+//        mage = age;
+//    }
+//    person(const person& p) {
+//        cout << "拷贝构造函数!" << endl;
+//        mage = p.mage;
+//    }
+//    //析构函数在释放内存之前调用
+//    ~person() {
+//        cout << "析构函数！" << endl;
+//    }
+//public:
+//    int mage;
+//};
+//void test02() {
+//    //4.2.3拷贝构造函数的调用时机
+//    //1.*使用一个已经创建完毕的对象来初始化一个新对象
+//    person p1(20);
+//    person p2(p1);
+//    cout << "p2的年龄为：" << p2.mage << endl;
+//}
+//
+////2.* 值传递的方式给函数参数传值
+//void test04(person p3) {
+//    //值传递就算改p3也不影响原来的值
+//}
+//void test03() {
+//    person p3;
+//    test04(p3);
+//}
+// //3.* 以值方式返回局部对象
+//person test05() {
+//    person p4;
+//    //返回的并不是原来的p4，而是一个新的对象
+//    cout << (int*)&p4 <<endl;
+//    return p4;
+//}
+//void test06() {
+//    person p5 = test05();
+//    cout << (int*)&p5 << endl;
+//
+//}
+
+//4.2.4构造函数的调用规则：默认情况下，c++编译器至少给一个类添加3个函数
+//1.默认构造函数（无参，函数体为空）
+//2.默认析构函数（无参，函数体为空）
+//3.默认拷贝函数，对属性进行值拷贝
+//* 如果用户定义有参构造函数，c++不在提供默认无参构造，但是会提供默认拷贝构造
+//* 如果用户定义拷贝构造函数，c++不会再提供其他构造函数
+//class person {
+//public:
+//    //注释掉默认无参构造后，因为已经存在有参构造，所以编译器不在提供无参构造，此时调用test02的无参就会报错
+//    person() {
+//        cout << "preson的默认构造函数调用" << endl;
+//    }
+//    person(int age) {
+//        cout << "preson的有参构造函数调用" << endl;
+//        mage = age;
+//    }
+//    //这里注释掉了，执行test01中的拷贝构造函数还是默认会有下两行的值传递
+//    //person(const person& p) {
+//    //    cout << "preson的拷贝构造函数调用" << endl;
+//    //    mage = p.mage;//这一行值传递
+//    //}
+//
+//    ~person() {
+//        cout << "preson的默认析构函数调用" << endl;
+//    }
+//    int mage;
+//};
+//void test01() {
+//    person p;
+//    p.mage = 18;
+//    person p2(p);
+//    cout << "p2的年龄为：" << p2.mage << endl;
+//}
+//void test02() {
+//    person p3;
+//}
+
+//4.2.5深拷贝和浅拷贝
+//class person {
+//public:
+//    person() {
+//        cout << "默认无参构造" << endl;
+//    }
+//    person(int age, int height) {
+//        cout << "默认有参构造" << endl;
+//        mage = age;
+//        mheight = new int(height);//new返回的是一个地址
+//    }
+//    //自己实现拷贝构造，解决浅拷贝问题
+//    person(const person& p) {
+//        cout << "拷贝构造调用" << endl;
+//        mage = p.mage;
+//        //mheight = p.mheight;//默认拷贝函数（编译器）
+//        //深拷贝操作
+//        mheight = new int(*p.mheight);
+//    }
+//
+//    ~person() {
+//        //析构函数，将堆区开辟的空间释放
+//        if (mheight != NULL) {
+//            delete mheight;
+//            mheight = NULL;//这里只是把一个对象的地址释放了，但另外一个并没有被命名为NULL，所以还是会发生双重释放，从而崩溃
+//        }//解决办法，自己写一个拷贝函数，进行深拷贝
+//        cout << "默认析构" << endl;
+//    }
+//
+//    int mage;
+//    int* mheight;
+//};
+//void test01() {
+//    //创建的对象一般在栈上，尊顺先进后出和后进先出的规则，所以先执行p2的析构，再执行p1的析构
+//    person p1(18,160);
+//    cout << "p1的年龄为：" <<p1.mage<< endl;
+//    cout << "p1的身高为：" << *p1.mheight << endl;
+//    //使用默认拷贝函数，默认是进行浅拷贝
+//    person p2(p1);
+//    cout << "p2的年龄为：" << p2.mage << endl;
+//    cout << "p2的身高为：" << *p2.mheight << endl;
+//
+//}
+
+//4.2.6初始化列表
 class person {
 public:
-    person() {
-        cout << "无参构造函数！" << endl;
+    //传统初始化
+    //person(int a,int b,int c) {
+    //    ma = a;
+    //    mb = b;
+    //    mc = c;
+    //}
+
+    //初始化列表初始化属性
+    person(int a,int b,int c) :ma(a), mb(b), mc(c) {
+        //person():ma(10),mb(20),mc(30){//两种写法对应两种调用方式
+
     }
-    person(int age) {
-        cout << "有参构造函数！" << endl;
-        mage = age;
-    }
-    person(const person& p) {
-        cout << "拷贝构造函数!" << endl;
-        mage = p.mage;
-    }
-    //析构函数在释放内存之前调用
-    ~person() {
-        cout << "析构函数！" << endl;
-    }
-public:
-    int mage;
+    int ma;
+    int mb;
+    int mc;
 };
-void test02() {
-    //4.2.3拷贝构造函数的调用时机
-    //1.*使用一个已经创建完毕的对象来初始化一个新对象
-    person p1(20);
-    person p2(p1);
-    cout << "p2的年龄为：" << p2.mage << endl;
-}
-
-//2.* 值传递的方式给函数参数传值
-void test04(person p3) {
-    //值传递就算改p3也不影响原来的值
-}
-void test03() {
-    person p3;
-    test04(p3);
-}
- //3.* 以值方式返回局部对象
-person test05() {
-    person p4;
-    //返回的并不是原来的p4，而是一个新的对象
-    cout << (int*)&p4 <<endl;
-    return p4;
-}
-void test06() {
-    person p5 = test05();
-    cout << (int*)&p5 << endl;
+void test01() {
+    person p(10, 20, 30);
+    //person p;
+    cout << "ma的值为：" << p.ma<<endl;
+    cout << "mb的值为：" << p.mb << endl;
+    cout << "mc的值为：" << p.mc << endl;
 
 }
-
-
 int main()
 {
 //4.2
@@ -129,11 +236,14 @@ int main()
     //4.2.3
     //test02();
     //test03();
-    test06();
-
-
-
-
+    //test06();
+    //4.2.4
+    //test01();
+    //test02();
+    //4.2.5   
+    //test01();
+    //4.2.6
+    test01();
 
 
 
