@@ -425,11 +425,11 @@ int main() {
 	//removeNode(list, 21);
 	//listNode(list);
 
-	//Node* list = initList();
-	//Node* tail = get_tail(list);
-	//tail = insertTail(tail, 1);
-	//tail = insertTail(tail, 2);
-	//tail = insertTail(tail, 3);
+	Node* list = initList();
+	Node* tail = get_tail(list);
+	tail = insertTail(tail, 1);
+	tail = insertTail(tail, 2);
+	tail = insertTail(tail, 3);
 	//tail = insertTail(tail, 4);
 	//tail = insertTail(tail, 5);
 	//tail = insertTail(tail, 6);
@@ -437,9 +437,9 @@ int main() {
 	//tail = insertTail(tail, 8);
 
 	////反转函数测试
-	//listNode(list);
-	//Node* reverse = reverseList(list);
-	//listNode(reverse);
+	listNode(list);
+	Node* reverse = reverseList(list);
+	listNode(reverse);
 	
 	////删除中间节点
 	//listNode(list);
