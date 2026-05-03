@@ -200,32 +200,70 @@ using namespace std;
 //}
 
 //4.2.6初始化列表
-class person {
-public:
-    //传统初始化
-    //person(int a,int b,int c) {
-    //    ma = a;
-    //    mb = b;
-    //    mc = c;
-    //}
+//class person {
+//public:
+//    //传统初始化
+//    //person(int a,int b,int c) {
+//    //    ma = a;
+//    //    mb = b;
+//    //    mc = c;
+//    //}
+//
+//    //初始化列表初始化属性
+//    person(int a,int b,int c) :ma(a), mb(b), mc(c) {
+//        //person():ma(10),mb(20),mc(30){//两种写法对应两种调用方式
+//
+//    }
+//    int ma;
+//    int mb;
+//    int mc;
+//};
+//void test01() {
+//    person p(10, 20, 30);
+//    //person p;
+//    cout << "ma的值为：" << p.ma<<endl;
+//    cout << "mb的值为：" << p.mb << endl;
+//    cout << "mc的值为：" << p.mc << endl;
+//
+//}
 
-    //初始化列表初始化属性
-    person(int a,int b,int c) :ma(a), mb(b), mc(c) {
-        //person():ma(10),mb(20),mc(30){//两种写法对应两种调用方式
+//4.2.7类对象作为类成员
+//class phone {
+//public:
+//    phone(string pname) {
+//        m_pname = pname;
+//        cout << "phone的函数构造调用" << endl;
+//    }
+//    ~phone() {
+//        cout << "phone析构函数" << endl;
+//    }
+//    string m_pname;
+//
+//};
+//
+//class person {
+//    public:
+//        //下一行中的string pname能给phone类型的m_phone，是因为相当于，phone m_phone = pname 隐式转换法，phone中的pname也是string类型
+//        person(string name,string pname):m_name(name),m_phone(pname)
+//        {
+//            cout << "person的函数构造调用" << endl;
+//        }
+//        ~person(){
+//            cout << "person析构函数" << endl;
+//        }
+//    //姓名
+//        string m_name;
+//    //手机
+//        phone m_phone;
+//};
+//
+//void test01() {
+//    person p("张三", "苹果MAX");
+//    cout << p.m_name << "拿着：" << p.m_phone.m_pname << endl;
+//}
+////当其他类对象作为本类成员，构造时候先构造类对象，再构造自身，析构是相反的（栈的先进后出）
 
-    }
-    int ma;
-    int mb;
-    int mc;
-};
-void test01() {
-    person p(10, 20, 30);
-    //person p;
-    cout << "ma的值为：" << p.ma<<endl;
-    cout << "mb的值为：" << p.mb << endl;
-    cout << "mc的值为：" << p.mc << endl;
 
-}
 int main()
 {
 //4.2
@@ -243,9 +281,9 @@ int main()
     //4.2.5   
     //test01();
     //4.2.6
-    test01();
-
-
+    //test01();
+    //4.2.7
+    //test01();
 
 
     system("pause");
