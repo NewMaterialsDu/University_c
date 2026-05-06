@@ -263,7 +263,60 @@ using namespace std;
 //}
 ////当其他类对象作为本类成员，构造时候先构造类对象，再构造自身，析构是相反的（栈的先进后出）
 
+//4.2.8静态成员:在变量和函数前加上static
+//成员变量：所有对象共享同一份数据；在编译阶段分配内存；类内声明，类外初始化
+//成员函数：所有对象共享一个函数；静态成员函数只能访问静态成员变量
+//class person {
+//public:
+//    static int m_a;
+//    //静态对象的访问也是有权限的
+//private:
+//    static int m_b;
+//
+//   
+//};
+//int person::m_a = 100;
+//int person::m_b = 200;
+//void test01() {
+//    person p;
+//    cout << p.m_a << endl;
+//
+//    person p2;
+//    p2.m_a = 200;
+//    cout << p.m_a << endl;
+//}
+//void test02() {
+//    //静态成员变量不属于某个对象上，所有对象访问同一份数据
+//    //因此静态对象能通过对象和类名访问
+//    person p3;
+//    cout << p3.m_a << endl;
+//
+//    cout << person::m_a << endl;
+//    //cout << person::m_b << endl;//
+//}
 
+//静态成员函数
+//class person {
+//public:
+//    
+//    static void func1() {
+//        m_a = 100;//静态函数只能访问静态变量
+//        //m_b = 200;
+//        cout << "static void funci()" << endl;
+//    }
+//    int m_b;
+//    static int m_a;
+//    //和静态变量一样，也是有访问权限的
+//};
+//int person::m_a = 0;
+////两种访问方式
+//void test01() {
+//    //通过对象访问
+//    person p;
+//    p.func1();
+//    //通过类名访问
+//    person::func1();
+//}
 int main()
 {
 //4.2
@@ -284,8 +337,10 @@ int main()
     //test01();
     //4.2.7
     //test01();
-
-
+    //4.2.8
+    //test01();
+    //test02();
+    //test01();
     system("pause");
     return 0;
 }
