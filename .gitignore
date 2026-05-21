@@ -41,3 +41,9 @@
 
 # Visual Studio temporary folder (ignore on all computers)
 .vs/
+
+# Visual Studio 编译输出目录（忽略所有 Debug/Release 文件夹）
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
