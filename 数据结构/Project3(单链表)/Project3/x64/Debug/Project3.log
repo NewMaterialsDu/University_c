@@ -1,7 +1,0 @@
-﻿  FileName.cpp
-D:\University_code\University_c\数据结构\Project3(单链表)\FileName.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-D:\University_code\University_c\数据结构\Project3(单链表)\FileName.cpp(153,61): warning C4474: printf: 格式字符串中传递的参数太多
-      D:\University_code\University_c\数据结构\Project3(单链表)\FileName.cpp(153,61):
-      占位符和其参数预计 0 可变参数，但提供的却是 2 参数
-  
-  Project3.vcxproj -> D:\University_code\University_c\数据结构\Project3(单链表)\x64\Debug\Project3.exe
