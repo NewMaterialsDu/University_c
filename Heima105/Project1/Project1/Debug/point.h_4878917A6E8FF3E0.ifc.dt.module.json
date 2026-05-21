@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Project1\\Debug\\point.obj",
+            "outputs": [
+                "Project1\\Debug\\point.h_4878917A6E8FF3E0.ifc.dt.module.json",
+                "Project1\\Debug\\point.h_4878917A6E8FF3E0.ifc.dt.d.json",
+                "Project1\\Debug\\point.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "E:\\University_code\\University_c\\Project1\\point.h",
+                    "source-path": "e:\\university_code\\university_c\\project1\\point.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
