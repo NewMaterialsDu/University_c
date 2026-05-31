@@ -21,6 +21,12 @@ typedef struct {
 //用来记录顶点是否被访问过
 int visited[MAXSIZE];
 
+//层序遍历使用队列（广度优先也使用）(不完全算是队列，只是用数组模拟)
+int front = 0;
+int rear = 0;
+int queue[MAXSIZE];
+
+//添加顶点信息
 void create_graph(Mat_Grph* G) {
 	G->vertex_num = 9;
 	G->edge_num = 15;
@@ -74,6 +80,31 @@ void create_graph(Mat_Grph* G) {
 	}
 }
 
+//广度优先
+void bfs(Mat_Grph G)
+{
+	int i = 0;
+	visited[i] = 1;
+	printf("%c\n", G.vertex[i]);
+	queue[rear] = i;
+	rear++;
+	//数组模拟队列，front指向队头，rear指向队尾，初始时都为0，每次入队时rear加1，每次出队时front加1，当front和rear相等时说明队列为空
+	while (front != rear) {
+		i = queue[front];
+		front++;
+		//遍历与i相连的顶点，如果有边且没有被访问过，就访问它并入队
+		for (int j = 0; j < G.vertex_num; j++) {
+			if (G.arc[i][j] == 1 && visited[j] == 0) {
+				visited[j] = 1;
+				printf("%c\n", G.vertex[j]);
+				queue[rear] = j;
+				rear++;
+			}
+		}
+	}
+}
+
+
 //深度优先
 void dfs(Mat_Grph G, int i) {
 	visited[i] = 1;
@@ -92,7 +123,9 @@ int main() {
 	for (int i = 0; i < G.vertex_num; i++) {
 		visited[i] = 0;
 	}
-	dfs(G, 0);
+
+	//dfs(G, 0);
+	bfs(G);
 
 	system("pause");
 	return 0;
