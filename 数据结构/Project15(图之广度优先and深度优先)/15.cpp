@@ -12,6 +12,7 @@ typedef struct {
 	//保存顶点
 	VertexType vertex[MAXSIZE];
 	//两个顶点之间边的关系，有边为一，无边为0
+	//边的信息(二维数组中两个顶点相交的地方的值表示边的权值)（这里没有权值）
 	EdgeType arc[MAXSIZE][MAXSIZE];
 	//顶点数量和边的数量
 	int vertex_num;
@@ -26,7 +27,7 @@ int front = 0;
 int rear = 0;
 int queue[MAXSIZE];
 
-//添加顶点信息
+//手动添加顶点信息
 void create_graph(Mat_Grph* G) {
 	G->vertex_num = 9;
 	G->edge_num = 15;
@@ -39,11 +40,15 @@ void create_graph(Mat_Grph* G) {
 	G->vertex[6] = 'G';
 	G->vertex[7] = 'H';
 	G->vertex[8] = 'I';
+
+	//初始化边的信息，先把所有的边都设置为0（无边）
 	for (int i = 0; i < G->vertex_num; i++) {
 		for (int j = 0; j < G->vertex_num; j++) {
 			G->arc[i][j] = 0;
 		}
 	}
+
+	//手动添加边的信息
 	//A-B A-F 
 	G->arc[0][1] = 1;
 	G->arc[0][5] = 1;
@@ -73,6 +78,8 @@ void create_graph(Mat_Grph* G) {
 
 	//G-H
 	G->arc[6][7] = 1;
+
+	//无向图，所以要对称赋值
 	for (int i = 0; i < G->vertex_num; i++) {
 		for (int j = 0; j < G->vertex_num; j++) {
 			G->arc[j][i] = G->arc[i][j];
