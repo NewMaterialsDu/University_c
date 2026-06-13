@@ -26,6 +26,7 @@ void createGraph(Mat_Graph* G) {
 		G->vertex[i] = i;
 	}
 
+	//把自己和自己的距离设置为0，其他的距离设置为MAX
 	for (int i = 0; i < G->vertex_num; i++) {
 		for (int j = 0; j < G->vertex_num; j++) {
 			if (i == j) {
@@ -37,6 +38,7 @@ void createGraph(Mat_Graph* G) {
 		}
 	}
 
+	//一个个手动添加边和权重
 	G->arc[0][1] = 1;
 	G->arc[0][2] = 5;
 
@@ -56,6 +58,13 @@ void createGraph(Mat_Graph* G) {
 
 	G->arc[5][7] = 5;
 
+	//无向图，所以对称位置也要设置
+	for (int i = 0; i < G->vertex_num; i++) {
+		for (int j = i; j < G->vertex_num;j++) {
+			G->arc[j][i] = G->arc[i][j];
+		}
+	}
+
 }
 
 //返回下一次要观察哪个顶点
@@ -73,14 +82,40 @@ int choose(int distance[], int found[], int vertex_num) {
 
 //迪杰斯特拉（Dijkstra）
 void dijkstra(Mat_Graph G,int begin) {
-	int found[MAXSIZE];//顶点是否已经走过
+	int found[MAXSIZE];//顶点是否已经走过对应0，1
 	int path[MAXSIZE];//路径
-	int distance[MAXSIZE];//顶点之间连接的距离
+	int distance[MAXSIZE];//begin到每个顶点的最短距离
 	for (int i = 0; i < G.vertex_num; i++) {
+		//初始化
 		found[i] = 0;
 		path[i] = -1;
-		distance[i] = G.vertex_num;
+		//begin到每个顶点的距离，初始为邻接矩阵中的值
+		distance[i] = G.arc[begin][i];
 	}
+
+	found[begin] = 1;
+	distance[begin] = 0;
+
+	int next;//下一次要观察哪个顶点
+	for (int i = 1;i<G.vertex_num;i++) {
+		//7
+		next = choose(distance, found, G.vertex_num);
+		//printf("%d ", next);
+		found[next] = 1;
+		for (int j = 0; j < G.vertex_num; j++) {
+			if (found[j] == 0) {
+				if (distance[next] + G.arc[next][j]<distance[j]) {
+					distance[j] = distance[next] + G.arc[next][j];
+					path[j] = next;
+				}
+			}
+		}
+
+	}
+
+
+
+
 }
 
 int main() {
