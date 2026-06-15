@@ -58,6 +58,11 @@ void createGraph(Mat_Graph* G) {
 
 	G->arc[5][7] = 5;
 
+	G->arc[6][7] = 2;
+	G->arc[6][8] = 7;
+
+	G->arc[7][8] = 4;
+
 	//无向图，所以对称位置也要设置
 	for (int i = 0; i < G->vertex_num; i++) {
 		for (int j = i; j < G->vertex_num;j++) {
@@ -98,19 +103,34 @@ void dijkstra(Mat_Graph G,int begin) {
 
 	int next;//下一次要观察哪个顶点
 	for (int i = 1;i<G.vertex_num;i++) {
-		//7
+		//1
 		next = choose(distance, found, G.vertex_num);
 		//printf("%d ", next);
+		//代表这个顶点已经访问过了
 		found[next] = 1;
 		for (int j = 0; j < G.vertex_num; j++) {
 			if (found[j] == 0) {
+				//更新distance数组，这个数组指的是begin到其他所有顶点的最短距离
 				if (distance[next] + G.arc[next][j]<distance[j]) {
 					distance[j] = distance[next] + G.arc[next][j];
+					//找到离V2最近的顶点了，是V1，所以下标为2的path赋值为1.代表离V2最近的顶点为V1
 					path[j] = next;
 				}
 			}
 		}
 
+	}
+
+	//一个循环打印
+	for (int i = 1; i < G.vertex_num;i++) {
+		printf("V0 -> V%d\n", i, distance[i]);
+		int j = i;
+		printf("V%d <- ", i);
+		while (path[j] != -1) {
+			printf("V%d <- ", path[j]);
+			j = path[j];
+		}
+		printf("V0\n");
 	}
 
 
