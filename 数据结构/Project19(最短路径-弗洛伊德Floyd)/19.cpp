@@ -82,7 +82,18 @@ void floyd(Mat_Graph G) {
 		}
 	}
 
-	//
+	//j：起始顶点  i：中转顶点  k：终止顶点
+	for (int i = 0; i < G.vertex_num;i++) {
+		for (int j = 0; j < G.vertex_num;j++) {
+			for (int k = 0; k < G.vertex_num; k++) {
+				if (distance[j][k] > distance[j][i] + distance[i][k]) {
+					distance[j][k] = distance[j][i] + distance[i][k];
+					path[j][k] = path[i][k];
+
+				}
+			}
+		}
+	}
 }
 
 
