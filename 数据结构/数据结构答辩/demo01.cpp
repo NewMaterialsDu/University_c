@@ -168,7 +168,7 @@ void printPathCoords(Point path[], int len) {
 }
 
 /* ---------- 主函数 ---------- */
-int main() {
+int main01() {
     /* 固定迷宫：外围封闭，入口(1,0)，出口(8,9)，内部曲折有分支 */
     int maze[ROWS][COLS] = {
         {1,1,1,1,1,1,1,1,1,1},
