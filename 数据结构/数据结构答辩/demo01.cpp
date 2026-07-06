@@ -5,22 +5,24 @@
 #define COLS 10
 #define MAX_QUEUE 100
 
-/* ---------- 坐标结构 ---------- */
+//点结构体
 typedef struct {
     int x, y;
 } Point;
 
-/* ---------- 循环队列 ---------- */
+//队列结构体
 typedef struct {
     Point data[MAX_QUEUE];
     int front, rear;
 } Queue;
 
+//初始化队列
 void initQueue(Queue* q) {
     q->front = 0;
     q->rear = 0;
 }
 
+//判断队列是否为空
 int isEmpty(Queue* q) {
     return q->front == q->rear;
 }
@@ -45,7 +47,7 @@ Point dequeue(Queue* q) {
 int dx[4] = { -1, 1, 0, 0 };
 int dy[4] = { 0, 0, -1, 1 };
 
-/* ---------- BFS 求最短路径 ---------- */
+//（BFS） 求最短路径
 int bfs(int maze[ROWS][COLS], Point start, Point end, Point parent[ROWS][COLS]) {
     int visited[ROWS][COLS];
     int i, j;
@@ -167,9 +169,8 @@ void printPathCoords(Point path[], int len) {
     printf("\n");
 }
 
-/* ---------- 主函数 ---------- */
+
 int main01() {
-    /* 固定迷宫：外围封闭，入口(1,0)，出口(8,9)，内部曲折有分支 */
     int maze[ROWS][COLS] = {
         {1,1,1,1,1,1,1,1,1,1},
         {0,0,0,1,0,0,0,1,0,1},

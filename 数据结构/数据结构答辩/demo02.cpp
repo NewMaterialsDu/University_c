@@ -9,7 +9,7 @@ struct riqi {
     int ri;
 };
 
-// 学生节点结构体（包含日期）
+// 学生节点结构体
 struct student_node {
     char mingzi[15];
     char banji[15];
@@ -18,7 +18,7 @@ struct student_node {
     struct student_node* next;
 };
 
-// 全局链表头指针
+// 全局链表
 struct student_node* head = NULL;
 
 // 录入学生信息
@@ -33,12 +33,7 @@ void input_i() {
     }
 
     for (int i = 0; i < n; i++) {
-        // 创建新节点
         struct student_node* new_node = (struct student_node*)malloc(sizeof(struct student_node));
-        if (new_node == NULL) {
-            printf("内存分配失败！\n");
-            return;
-        }
         new_node->next = NULL;
 
         printf("请输入学生的班级：\n");
@@ -54,7 +49,7 @@ void input_i() {
         printf("请输入学生的生日（日）：\n");
         scanf_s("%d", &new_node->birthday.ri);
 
-        // 添加到链表尾部
+        // 尾插法
         if (head == NULL) {
             head = new_node;
         }
@@ -71,19 +66,18 @@ void input_i() {
 
 // 修改学生信息
 void xuigai() {
-    printf("请选择要通过哪种方式修改学生信息（0.返回 1.姓名 2.班级 3.学号 4.生日）：\n");
+    printf("请选择要通过哪种方式查找要修改学生信息（0.返回 1.姓名 2.班级 3.学号 4.生日）：\n");
     int choice = 0;
     scanf_s("%d", &choice);
-
-    struct student_node* found = NULL;  // 找到的节点指针
-    int found_index = -1;               // 仅用于标识是否找到
+	//用来存储找到的学生
+    struct student_node* found = NULL; 
 
     switch (choice) {
     case 0:
         return;
     case 1: {
         char name[15];
-        printf("请输入要修改的学生姓名：\n");
+        printf("请输入要修改的学生的姓名：\n");
         scanf_s("%s", name, 15);
         struct student_node* p = head;
         while (p != NULL) {
@@ -97,7 +91,7 @@ void xuigai() {
     }
     case 2: {
         char ban[15];
-        printf("请输入要修改的学生班级：\n");
+        printf("请输入要修改的学生的班级：\n");
         scanf_s("%s", ban, 15);
         struct student_node* p = head;
         while (p != NULL) {
@@ -200,7 +194,8 @@ void chazhao() {
     scanf_s("%d", &choice);
 
     struct student_node* p = head;
-    int found_flag = 0;  // 标记是否找到
+    // 标记是否找到
+    int found_flag = 0;  
 
     switch (choice) {
     case 0:
@@ -273,7 +268,7 @@ void chazhao() {
         p = head;
         while (p != NULL) {
             if (p->birthday.nian == year && p->birthday.yue == month && p->birthday.ri == day) {
-                printf("===== 找到匹配学生 =====\n");
+                printf("找到学生：\n");
                 printf("姓名：%s\n", p->mingzi);
                 printf("班级：%s\n", p->banji);
                 printf("学号：%d\n", p->xuehao);
@@ -291,7 +286,7 @@ void chazhao() {
     }
 }
 
-// 释放链表内存（程序结束时调用）
+// 释放链表内存
 void free_list() {
     struct student_node* p = head;
     while (p != NULL) {
@@ -305,7 +300,7 @@ void free_list() {
 int main() {
     while (1) {
         printf("欢迎回来，管理员！\n");
-        printf("请输入要执行的操作（0.退出 1.录入学生信息 2.查询学生信息 3.修改学生信息）：\n");
+        printf("请输入要执行的操作：\n0.退出\n1.录入学生信息\n2.查询学生信息\n3.修改学生信息\n");
         int a = 0;
         scanf_s("%d", &a);
 
@@ -320,7 +315,7 @@ int main() {
         }
         else if (a == 0) {
             printf("退出程序，欢迎下次使用！\n");
-            free_list();  // 释放链表内存
+            free_list();  
             break;
         }
         else {
