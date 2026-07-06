@@ -297,7 +297,7 @@ void free_list() {
     head = NULL;
 }
 
-int main() {
+int main02() {
     while (1) {
         printf("欢迎回来，管理员！\n");
         printf("请输入要执行的操作：\n0.退出\n1.录入学生信息\n2.查询学生信息\n3.修改学生信息\n");
