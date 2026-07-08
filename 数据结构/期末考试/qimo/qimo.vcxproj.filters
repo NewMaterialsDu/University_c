@@ -15,19 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="八皇后问题.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="背包问题.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="层序遍历BFS求二叉树层高.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="单链表之合并两个递增有序链表.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="递归法求二叉树层高.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

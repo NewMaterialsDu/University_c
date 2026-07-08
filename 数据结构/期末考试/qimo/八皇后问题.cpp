@@ -39,7 +39,7 @@ void backtrack(int row) {
     }
 }
 
-int main01() {
+int main() {
     backtrack(0);
     printf("方案总数：%d\n", totalSolutions);
     return 0;

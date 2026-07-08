@@ -39,7 +39,7 @@ int getHeightRecursive(TreeNode* root) {
 }
 
 // 测试主函数
-int main() {
+int main06() {
     // 构建测试树：
     //        1
     //       / \

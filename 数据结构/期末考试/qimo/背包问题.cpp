@@ -1,11 +1,11 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
 // 计算最大值的辅助函数
 int max(int a, int b) {
     return a > b ? a : b;
 }
 
-int main02() {
+int main() {
     // 1. 定义题目中的数据
     int n = 5;              // 物品数量
     int W = 10;             // 背包总容量
