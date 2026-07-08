@@ -63,7 +63,7 @@ int getHeightIterative(TreeNode* root) {
 }
 
 // 测试主函数
-int main() {
+int main03() {
     // 构建测试树：
     //        1
     //       / \

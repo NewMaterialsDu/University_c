@@ -77,7 +77,7 @@ void FreeList(LinkList L) {
 }
 
 // 主函数测试
-int main() {
+int main04() {
     int arrA[] = {1, 3, 5, 7, 9};
     int arrB[] = {2, 4, 6, 8, 10};
     LinkList A = CreateList(arrA, 5);
